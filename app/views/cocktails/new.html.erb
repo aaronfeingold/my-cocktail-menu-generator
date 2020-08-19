@@ -1,3 +1,5 @@
+<h1>Create a New Cocktail!</h1>
+
 <%= form_for(@cocktail) do |f| %>
   <div>
     <%= f.label :name %>
@@ -7,13 +9,9 @@
     <%= f.label :description %> <br>
     <%= f.text_area :description %>
   </div><br>
-  <div>
-    <%= f.label :alcohol %>
-    <%= f.text_area :alcohol %>
+<%# gonna need a field for ingredients here %>
   </div><br>
-  <div>
-    <%= f.label :ingredients %>
-    <%= f.text_area :ingredients %>
-  </div><br>
+
+  <%# gonna need the option to add to a menu and a restaurant (find_or_create_by) %>
   <%= f.submit %>
 <% end %>

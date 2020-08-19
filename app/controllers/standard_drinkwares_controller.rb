@@ -1,0 +1,2 @@
+class StandardDrinkwaresController < ApplicationController
+end
