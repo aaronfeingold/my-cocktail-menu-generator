@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_185859) do
+ActiveRecord::Schema.define(version: 2020_08_19_194301) do
 
   create_table "cocktails", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_185859) do
     t.integer "ingredient_id"
     t.integer "restaurant_id"
     t.integer "standard_drinkware_id"
+    t.integer "menu_id"
   end
 
   create_table "ingredients", force: :cascade do |t|
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_185859) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "cocktail_id"
+    t.integer "user_id"
   end
 
   create_table "menus", force: :cascade do |t|
@@ -38,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_185859) do
     t.integer "restaurant_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -45,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_185859) do
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "standard_drinkwares", force: :cascade do |t|
@@ -53,6 +57,8 @@ ActiveRecord::Schema.define(version: 2020_08_19_185859) do
     t.string "size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "cocktail_id"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
